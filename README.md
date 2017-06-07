@@ -51,7 +51,7 @@ Workdays.workdays_in(fri_before_family_day, family_day, :ca_qc) # => 2
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/julienroger/validatr.
+Bug reports and pull requests are welcome on GitHub at https://github.com/julienroger/workdays.
 
 
 ## License
