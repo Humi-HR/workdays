@@ -50,7 +50,7 @@ module Workdays
 
       holidays   = Holidays.between(start_date, end_date, locale, :observed).map do |x|
         x[:date].on_weekday?
-      end.uniq.count
+      end.count(true)
 
       total_days - weekends - holidays
     end
