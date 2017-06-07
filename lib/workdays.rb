@@ -1,8 +1,13 @@
 # frozen_string_literal: true
 
-require "workdays/version"
+require "active_support/time"
+require "holidays"
 
-# This module contains methods to help with dates
+require "workdays/version"
+require "workdays/date_extensions"
+require "workdays/core_ext/date"
+require "workdays/core_ext/time"
+require "workdays/core_ext/active_support/time_with_zone"
+
 module Workdays
-  # Code goes here...
 end
