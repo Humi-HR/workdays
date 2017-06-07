@@ -5,7 +5,6 @@ require "spec_helper"
 describe Workdays do
   let(:today)           { Date.today                  }
   let(:saturday_date)   { Date.new(2016, 2, 6)        }
-  let(:saturday_time)   { saturday_date.to_time(:utc) }
   let(:sunday_date)     { Date.new(2016, 2, 7)        }
   let(:sunday_time)     { sunday_date.to_time(:utc)   }
   let(:monday_date)     { Date.new(2016, 2, 8)        }
@@ -18,16 +17,10 @@ describe Workdays do
   let(:christmas)       { Date.new(2017, 12, 25)      } # Monday
 
   describe "#workday?" do
-    context "with locale Canada" do
-      example { expect(saturday_date  .workday?).to eq false  }
-      example { expect(monday_date    .workday?).to eq true   }
-      example { expect(good_friday    .workday?).to eq false  }
-      example { expect(labour_day     .workday?).to eq false  }
-      example { expect(christmas      .workday?).to eq false  }
-      example { expect(family_day     .workday?).to eq true   }
-      example { expect(st_patricks_day.workday?).to eq true   }
-      example { expect(civic_holiday  .workday?).to eq true   }
-    end
+    example { expect(sunday_date.workday?).to eq false  }
+    example { expect(sunday_time.workday?).to eq false  }
+    example { expect(monday_date.workday?).to eq true   }
+    example { expect(monday_time.workday?).to eq true   }
 
     context "with locale Ontario" do
       example { expect(saturday_date  .workday?([:ca_on])).to eq false  }

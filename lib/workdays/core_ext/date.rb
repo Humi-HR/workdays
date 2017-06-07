@@ -4,5 +4,5 @@ require "holidays/core_extensions/date"
 
 class Date
   include Holidays::CoreExtensions::Date
-  include Workdays::DateExtensions
+  include Workdays::TimeExtensions
 end

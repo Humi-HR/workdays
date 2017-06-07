@@ -4,7 +4,7 @@ require "active_support/time"
 require "holidays"
 
 require "workdays/version"
-require "workdays/date_extensions"
+require "workdays/time_extensions"
 require "workdays/core_ext/date"
 require "workdays/core_ext/time"
 require "workdays/core_ext/active_support/time_with_zone"
