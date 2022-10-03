@@ -2,7 +2,7 @@
 
 # This module contains methods to help with dates
 module Workdays
-  DEFAULT_LOCALE = [:ca].freeze
+  DEFAULT_LOCALE = [:ca_on].freeze
 
   module TimeExtensions
     def workday?(locale = DEFAULT_LOCALE)
@@ -18,6 +18,7 @@ module Workdays
     def to_workday(locale = DEFAULT_LOCALE)
       day = self
       return day if day.workday?(locale)
+
       day.last_workday(locale)
     end
 
@@ -52,11 +53,13 @@ module Workdays
       (end_time.to_date - start_time.to_date).to_i + 1
     end
 
-    private def weekends_in(start_time, end_time)
+    private
+
+    def weekends_in(start_time, end_time)
       (start_time..end_time).map(&:on_weekend?).count(true)
     end
 
-    private def non_weekend_holidays_in(start_time, end_time, locale = DEFAULT_LOCALE)
+    def non_weekend_holidays_in(start_time, end_time, locale = DEFAULT_LOCALE)
       start_date  = start_time.to_date
       end_date    = end_time.to_date
 

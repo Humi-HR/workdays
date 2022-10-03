@@ -22,7 +22,7 @@ Or install it yourself as:
 
 ## Usage
 
-By default, Workdays will use `:ca` as the default locale.
+By default, Workdays will use `:ca_on` as the default locale.
 
 ```ruby
 Date.new(2017, 2, 8)  .workday? # => true
